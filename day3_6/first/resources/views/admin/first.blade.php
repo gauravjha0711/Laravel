@@ -1,0 +1,1 @@
+<h1>My First page inside Admin</h1>
