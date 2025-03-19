@@ -1,0 +1,1 @@
+<h1>Welcome, your age is {{ $age }}</h1>

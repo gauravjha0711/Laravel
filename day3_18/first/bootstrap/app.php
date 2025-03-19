@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use App\Http\Middleware\ValidUser; // <-- Don't forget to import the class
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -11,12 +12,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
-        $middleware->aapendToGroup('ok-user',[
-            ValidUser::class,
-            Checkage::class
-            
-        ]);
+         $middleware->append(CheckAge::class);   
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
