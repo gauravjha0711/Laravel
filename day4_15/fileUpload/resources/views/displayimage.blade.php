@@ -1,0 +1,1 @@
+<img src="{{url('storage/'.$path)}}" alt="" style="width: 100%; height: 100%;">
