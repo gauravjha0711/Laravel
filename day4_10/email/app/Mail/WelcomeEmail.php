@@ -12,15 +12,16 @@ use Illuminate\Queue\SerializesModels;
 class WelcomeEmail extends Mailable
 {
     use Queueable, SerializesModels;
+    public $msg;
+    public $sub;
 
     /**
      * Create a new message instance.
      */
-    public $msg;
-    public $sub;
-    public function __construct($message ,$subject)
+    public function __construct($msg,$subject)
     {
-        $this->msg = $message;
+        //
+        $this->msg = $msg;
         $this->sub = $subject;
     }
 
@@ -41,10 +42,8 @@ class WelcomeEmail extends Mailable
     {
         return new Content(
             view: 'mail',
-            with: ['mailMessage' => $this->msg],
         );
     }
-
 
     /**
      * Get the attachments for the message.
