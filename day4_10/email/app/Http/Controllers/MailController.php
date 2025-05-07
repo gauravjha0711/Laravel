@@ -11,7 +11,7 @@ class MailController extends Controller
     //
     function sendEmail(){
         $to = "gauravjhagk07@gmail.com";
-        $msg = "Hi,How are you!";
+        $msg = "Hi,How are you!,what are doing";
         $sub = "Test Mail";
         Mail::to($to)->send(new WelcomeEmail($msg,$sub));
         return "Email sent successfully";
